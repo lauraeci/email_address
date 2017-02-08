@@ -80,7 +80,7 @@ module EmailAddress
         if rule.include?("/")
           return rule if self.in_cidr?(rule)
         else
-          self.each {|mx| return rule if mx[:host].end_with?(rule) }
+          self.each {|mx| return rule if mx[:host] && mx[:host].end_with?(rule) }
         end
       end
       false
