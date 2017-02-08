@@ -352,7 +352,7 @@ module EmailAddress
       elsif self.ip_address
         @config[:host_allow_ip] && self.valid_ip?
       elsif rule == :mx
-        self.exchangers.mx_ips.size > 0
+        self.exchangers.mxers.size > 0
       elsif rule == :a
         self.has_dns_a_record?
       elsif rule == :off
