@@ -23,7 +23,6 @@ module EmailAddress
     def initialize(host, config={})
       @host = host
       @config = config
-      @mxers = []
     end
 
     def each(&block)
